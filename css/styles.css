@@ -3005,7 +3005,23 @@ textarea.form-control-lg {
   font-size: 1rem;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  position: relative;
+  z-index: 100 !important;
 }
+
+.btn-dark::after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: -1 !important;
+  border: 1px solid gray;
+  background-color: #0d6efd !important;
+  transform: translateX(-100px);
+  transform: translateY(-50px);
+  height: 100%;
+  width: 100%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .btn {
     transition: none;
@@ -6372,6 +6388,7 @@ textarea.form-control-lg {
   display: inline-block;
   content: "";
 }
+
 
 .placeholder-xs {
   min-height: 0.6em;
